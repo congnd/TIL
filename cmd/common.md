@@ -3,13 +3,19 @@
 dscacheutil -q group -a name admin
 ```
 
-Lean more about `dscacheutil`
+Learn more about `dscacheutil`
 ```bash
 man dscacheutil
 ```
 
-# `caffeinate` prevents MacOS from sleeping
-Common used:
+## Prevents MacOS from sleeping
+Use `caffeinate`
+
 ```
 caffeinate -d
+```
+
+Learn more about `caffeinate`
+```
+man caffeinate
 ```
