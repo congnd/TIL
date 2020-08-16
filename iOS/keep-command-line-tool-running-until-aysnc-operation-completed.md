@@ -12,3 +12,5 @@ performAsyncOperation {
 
 semaphore.wait()
 ```
+
+https://medium.com/@roykronenfeld/semaphores-in-swift-e296ea80f860
