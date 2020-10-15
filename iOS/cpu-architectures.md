@@ -1,13 +1,11 @@
 ## CPU architectures
 
 ### macOS
-On macOS, two architecture are supported:
 
 - x86_64: is the architecture of Intel's 64-bit CPUs, sometimes also simply referred to as x64. It is the architecture for all Intel Macs shipped between 2005 and 2021.
 - arm64: is the architecture used by newer Macs built on Apple Silicon, shipped in late 2020 and beyond.
 
 ### iOS and iPadOS
-On iOS and iPadOS, Elements supports three architectures for device deployment:
 
 - arm64: is the current 64-bit ARM CPU architecture, as used since the iPhone 5S and later (6, 6S, SE and 7), the iPad Air, Air 2 and Pro, with the A7 and later chips.
 - armv7s: (a.k.a. Swift, not to be confused with the language of the same name), being used in Apple's A6 and A6X chips on iPhone 5, iPhone 5C and iPad 4.
