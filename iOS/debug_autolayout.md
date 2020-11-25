@@ -4,8 +4,22 @@
 - Add `UIViewAlertForUnsatisfiableConstraints` into the symbolic field
 
 When debug, run this to get more infomation
-- Swift project: `expr -l objc++ -O -- [[UIWindow keyWindow] _autolayoutTrace]`
+- Swift project: 
+
+  You can use Swift language:
+  
+  ```
+  expr -l Swift -- import UIKit
+  expr -l Swift -- print(UIApplication.shared.keyWindow?.value(forKey: "_autolayoutTrace"))
+  ```
+
+  Or Objc:
+  
+  `expr -l objc++ -O -- [[UIWindow keyWindow] _autolayoutTrace]`
+
 - Objc-C project: `po [[UIWindow keyWindow] _autolayoutTrace]`
+
+The `_autolayoutTrace` is a private property of UIView, so you can get layout info of any UIView instance.
 
 If you want to cast raw address into a specific type:
 ```Swift
