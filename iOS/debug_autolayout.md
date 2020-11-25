@@ -19,8 +19,6 @@ When debug, run this to get more infomation
 
 - Objc-C project: `po [[UIWindow keyWindow] _autolayoutTrace]`
 
-The `_autolayoutTrace` is a private property of UIView, so you can get layout info of any UIView instance.
-
 If you want to cast raw address into a specific type:
 ```Swift
 expr -l Swift -- import UIKit
