@@ -19,3 +19,8 @@ Learn more about `caffeinate`
 ```
 man caffeinate
 ```
+
+## Setting proxy when using commandline
+```
+export http_proxy="http://localhost:8888"
+```
