@@ -24,3 +24,8 @@ man caffeinate
 ```
 export http_proxy="http://localhost:8888"
 ```
+
+And then unset the setting when you don't want to direct connections through the proxy anymore.
+```
+unset http_proxy
+```
