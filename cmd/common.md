@@ -23,6 +23,13 @@ man caffeinate
 ## Setting proxy when using commandline
 ```
 export http_proxy="http://localhost:8888"
+export https_proxy="http://localhost:8888"
+```
+
+And then unset the setting when you don't want to direct connections through the proxy anymore.
+```
+unset http_proxy
+unset https_proxy
 ```
 
 ## Setting proxy for NPM
@@ -35,12 +42,6 @@ And unset
 ```
 $ npm config delete http-proxy
 $ npm config delete https-proxy
-```
-
-
-And then unset the setting when you don't want to direct connections through the proxy anymore.
-```
-unset http_proxy
 ```
 
 ## Vim-mode on `tmux`
