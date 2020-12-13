@@ -29,3 +29,12 @@ And then unset the setting when you don't want to direct connections through the
 ```
 unset http_proxy
 ```
+
+## Vim-mode on `tmux`
+
+Add the following into your `~/.tmux.conf`
+```
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+```
