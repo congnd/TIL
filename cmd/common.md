@@ -25,6 +25,19 @@ man caffeinate
 export http_proxy="http://localhost:8888"
 ```
 
+## Setting proxy for NPM
+```
+$ npm config set proxy http://localhost:3128
+$ npm config set https-proxy http://localhost:3128
+```
+
+And unset
+```
+$ npm config delete http-proxy
+$ npm config delete https-proxy
+```
+
+
 And then unset the setting when you don't want to direct connections through the proxy anymore.
 ```
 unset http_proxy
