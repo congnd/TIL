@@ -11,8 +11,11 @@ Here is a very simple example that show you how to make a new window and make it
 let myWindow = UIWindow() // #1
 myWindow.rootViewController = UIViewController() // #2
 myWindow.frame = UIScreen.main.bounds // #2
+myWindow.frame = UIWindow.Level.statusBar + 1
 myWindow.isHidden = false // #3
 ```
+
+***This may not work in UIScene-enabled application. You have to remove all scene configurations.***
 
 - ***#1***. Create an instance of the UIWindow. You can subclass UIWindow to do things you want. 
 Since UIWindow is just a subclass of the UIView, you can do whatever you want with that view.
