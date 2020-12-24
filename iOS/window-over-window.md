@@ -7,7 +7,7 @@ there is no other view can be displayed on top of the PIP.
 
 Here is a very simple example that show you how to make a new window and make it visible on the screen.
 
-```
+```Swift
 let myWindow = UIWindow() // #1
 myWindow.rootViewController = UIViewController() // #2
 myWindow.frame = UIScreen.main.bounds // #2
