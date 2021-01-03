@@ -21,14 +21,16 @@ view.layer.add(a, forKey: nil)
 
 And you may expect something like this:
 
+![](https://media.giphy.com/media/veDtGxby1ak4q02p3y/giphy.gif)
 
 But eventually, you will see something like this:
 
+![](https://media.giphy.com/media/1M5VXOMMtg7U1bHvpc/giphy.gif)
 
 It's really weird, right?
 
 To be honest, I really don't understand why this can happen.
-But I realized that if we scale the view by a value which closes to zero but not zero (for example 0.0001) then the issue goes away.
+But I realized that if we scale the view by a value which closes to zero but not `zero` (for example 0.0001) then the issue goes away.
 And you'll see what you've expected.
 
 Instead of
