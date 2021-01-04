@@ -1,4 +1,25 @@
-# List all members of a group
+## Find & Count lines
+```shell
+find . \( -path ./Pods -o -path ./Carthage -o -path ./.git \) -prune -o -name "*.swift" -print0 | xargs -0 wc -l
+```
+
+Brief explanation:
+- `find`: `find` command
+- `.`: in current directory
+- `( -path ./Pods -o -path ./Carthage -o -path ./.git )`: matches all paths that contain `/Pods` or `/Carthage` or `./.git`
+  - `-path ./Pods`: matches all paths that contain `/Pods`
+  - `-o`: the `or` operator
+  - don't forget to put spaces before and after the `\)`/`\(`
+  - don't forget to put slash before the `(` and `)` to escape the interpreter
+- `-prune`: skip descending into the current path
+- `-o`: again, the `or` operator
+- `-name "*.swift"`: matches all paths that contain `.swift` in the last path component
+- `-print0`: print the pathname followd by a character code `0` instead of new line
+- `xargs -0`: turns the output of the prev command into input args of the following command. `-0` expects the character code `0` as the separator instead of new lines or spaces
+- `wc -l`: count number of lines in the input paths thoes are passed by `xargs`
+
+
+## List all members of a group
 ```bash
 dscacheutil -q group -a name admin
 ```
