@@ -17,9 +17,6 @@ public class Window: UIWindow {
   }
 
   public override var safeAreaInsets: UIEdgeInsets {
-    if isKeyWindow || UIWindow.key == nil {
-      return super.safeAreaInsets
-    }
     return _safeAreaInsets
   }
 }
