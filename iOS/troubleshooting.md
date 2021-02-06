@@ -9,5 +9,5 @@ your frameworks into app bundle at build time)
 
 If you see this specific message: `dyld: Library not loaded: @rpath/XCTest.framework/XCTest`
 then probably, you are embedding frameworks for test purpose only (RxSwift has RxTest, RxBlocking)
-, that require `XCTest` internally, into your app bundle. The solution for this is choose 
-`Do not embed` instead of `Embed and Sign` or `Embed without signing`.
+, that require `XCTest` internally, into your app bundle. The solution for this is just remove 
+those frameworks from General -> Frameworks section of your app target.
