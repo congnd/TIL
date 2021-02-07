@@ -30,3 +30,7 @@ git_basic_authorization Base64.strict_encode64("GITHUB_USERNAME:PERSONAL_ACCESS_
 ### Sets the `force_for_new_devices` to `true` to ensure that the provisioning always be synced
 
 ### It's better to provide to `match` the user name and email which you prefer use in Git commits
+```
+fastlane run match adhoc git_full_name:"YOUR_NAME" git_user_email:"YOUR_EMAIL"
+```
+Be sure that you already put the `run` in the middle of `fastlane` and `match` :D 
