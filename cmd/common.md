@@ -73,3 +73,10 @@ set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 ```
+
+## Find all files larger than a specific size
+```
+find . -type f -size +50M
+
+find . -type f -size +1G
+```
