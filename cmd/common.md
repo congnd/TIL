@@ -80,3 +80,8 @@ find . -type f -size +50M
 
 find . -type f -size +1G
 ```
+
+## Get directory/file size
+```
+du -sh PATH
+```
