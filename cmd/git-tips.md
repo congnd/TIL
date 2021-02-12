@@ -25,3 +25,10 @@ with the provided list of files is written in comma-separeated format.
 ```sh
 git lfs pull -I "path/to/file1,path/to/file2"
 ```
+
+### Mirroring a git repo 
+```
+$ git clone --mirror git@example.com/upstream-repository.git
+$ cd upstream-repository.git
+$ git push --mirror git@example.com/new-location.git
+```
