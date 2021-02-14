@@ -21,3 +21,11 @@ in a non-main module by adding them with `Do not embed` option in the Frameworks
 But this becomes a problem when using command line tool. For example, I'm using fastlane's `build_app`
 action, and it gave me the error above. So my recommendation here is, always declare the frameworks
 that you want to use in the Framework section of target module.
+
+### Auto-sizing tableview
+
+Sometimes, it's necessary to dinamically update cell's constraints based on the passed data.
+In that case, it's better to:
+- always set priority for one of vertical constraints to 999 to suppress autolayout warning 
+because of the `UIView-Encapsulated-Layout-Height`
+- call `layoutIfNeeded` on the cell after changing its constraints/content
