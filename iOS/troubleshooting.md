@@ -29,3 +29,12 @@ In that case, it's better to:
 - always set priority for one of vertical constraints to 999 to suppress autolayout warning 
 because of the `UIView-Encapsulated-Layout-Height`
 - call `layoutIfNeeded` on the cell after changing its constraints/content
+
+### error: exportArchive: IPA processing failed
+```
+error: exportArchive: IPA processing failed
+Error Domain=IDEFoundationErrorDomain Code=1 "IPA processing failed" UserInfo={NSLocalizedDescription=IPA processing failed}
+```
+Have you seen this error when trying to build your app?
+For my case, it happened because I added the same library into 2 module and both of them are congired with Embedded and Sign.
+Revise configuration fixed the issue (only set Embedded and Sign for the app module, for other modules, use Do NOT embed)
