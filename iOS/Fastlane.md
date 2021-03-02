@@ -35,8 +35,6 @@ fastlane run match type:adhoc git_full_name:"YOUR_NAME" git_user_email:"YOUR_EMA
 ```
 or 
 ```
-```
 fastlane run match --type "adhoc" --git_full_name "YOUR_NAME" --git_user_email "YOUR_EMAIL"
-```
 ```
 Be sure that you already put the `run` in the middle of `fastlane` and `match` :D 
