@@ -38,3 +38,7 @@ Error Domain=IDEFoundationErrorDomain Code=1 "IPA processing failed" UserInfo={N
 Have you seen this error when trying to build your app?
 For my case, it happened because I added the same library into 2 module and both of them are congired with Embedded and Sign.
 Revise configuration fixed the issue (only set Embedded and Sign for the app module, for other modules, use Do NOT embed)
+
+### With exact the same configuration as on Figma, shadow on iOS doesn't look like what it should be
+When trying to implement a shadow style from Figma, you should devide the blur value set on Figma by 2 
+then use that value to set to the `shadowRadius` of CALayer. Not sure the reason behind this.
