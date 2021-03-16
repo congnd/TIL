@@ -42,3 +42,7 @@ Revise configuration fixed the issue (only set Embedded and Sign for the app mod
 ### With exact the same configuration as on Figma, shadow on iOS doesn't look like what it should be
 When trying to implement a shadow style from Figma, you should devide the blur value set on Figma by 2 
 then use that value to set to the `shadowRadius` of CALayer. Not sure the reason behind this.
+
+### By default, UIGestureRecognizer cancels touches when it detected the gesture
+If you to handle touches even after a particular gesture recognizer has detected a gesture, 
+you can set the `cancelsTouchesInView` to `false`
