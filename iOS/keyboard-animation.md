@@ -23,7 +23,7 @@ func handle(notification: Notification) {
     delay: 0,
     options: UIView.AnimationOptions(rawValue: curve),
     animations: { 
-      // Updage layout here
+      // Update layout here
     })
 }
 ```
@@ -34,6 +34,6 @@ func handle(notification: Notification) {
   let frameKey = UIResponder.keyboardFrameEndUserInfoKey
   guard let frame = (notification.userInfo?[frameKey] as? NSValue)?.cgRectValue else { return }
   
-  // update layout here
+  // Update layout here
 }
 ```
