@@ -46,3 +46,10 @@ then use that value to set to the `shadowRadius` of CALayer. Not sure the reason
 ### By default, UIGestureRecognizer cancels touches when it detected the gesture
 If you to handle touches even after a particular gesture recognizer has detected a gesture, 
 you can set the `cancelsTouchesInView` to `false`
+
+### dSYM uploading for crash report tools
+- Make sure that you are generating dSYM files when building the app even for archive or development
+- You can check for the generated DSYM files in the product folder of your project
+- Each target has its own debug symbols file, so be sure to upload all of them
+- Use the metadata find command `mdfind` to find the missing UUID
+- Show metadata of a file `mdls path/to/file`
