@@ -53,3 +53,15 @@ you can set the `cancelsTouchesInView` to `false`
 - Each target has its own debug symbols file, so be sure to upload all of them
 - Use the metadata find command `mdfind` to find the missing UUID
 - Show metadata of a file `mdls path/to/file`
+
+### Running low on storage space in your Mac?
+- Remove all unsupported simulators.
+```
+xcrun simctl delete unavailable
+```
+
+- Remove simulators for old iOS versions you no longer need.
+```
+cd /Library/Developer/CoreSimulator/Profiles/Runtimes
+sudo rm -rf iOS\ 12.1.simruntime/
+```
