@@ -7,35 +7,33 @@ To solve the issue, we create a subclass of UIWidow which refuses all the change
 `safeAreaInsets` when it's NOT the key window.
 
 ```Swift
-public class Window: UIWindow {
-  private var _safeAreaInsets: UIEdgeInsets = .zero
+/// The window that refuses to update it's internal safeAreaInsets
+/// when it's not the key window of the application.
+///
+/// This is necessary since iOS updates the safeareainset of all the current active windows
+/// when app enters foreground mode but does NOT do the same when rotation in foreground.
+public class SafeWindow: UIWindow {
+    private var isMakeKeyAndVisibleInProgress: Bool = false
+    private var _safeAreaInsets: UIEdgeInsets = .zero
 
-  public override func safeAreaInsetsDidChange() {
-    if isKeyWindow || UIWindow.key == nil {
-      _safeAreaInsets = super.safeAreaInsets
+    /// It seems that the `safeAreaInsetsDidChange` depends on this one to detect changes,
+    /// so relying in that method to update the internal safe area insets may not work as expected.
+    public override var safeAreaInsets: UIEdgeInsets {
+        if isKeyWindow || isMakeKeyAndVisibleInProgress {
+            _safeAreaInsets = super.safeAreaInsets
+        }
+        return _safeAreaInsets
     }
-  }
 
-  public override var safeAreaInsets: UIEdgeInsets {
-    if isKeyWindow || UIWindow.key == nil {
-      return super.safeAreaInsets
+    public override func makeKeyAndVisible() {
+        isMakeKeyAndVisibleInProgress = true
+        super.makeKeyAndVisible()
+        isMakeKeyAndVisibleInProgress = false
     }
-    return _safeAreaInsets
-  }
-}
-
-extension UIWindow {
-  static var key: UIWindow? {
-    if #available(iOS 13, *) {
-      return UIApplication.shared.windows.first { $0.isKeyWindow }
-    } else {
-      return UIApplication.shared.keyWindow
-    }
-  }
 }
 ```
 
-___Update (2020/02/08):___
+___Update (2021/02/08):___
 Today, I realized that the navigation bar frame get update even with the above fix.
 So I guess there is a machenism that allows those components to be updated when app entering foreground.
-This doesn't seem appearing on all devoce models but only some specific ones.
+This doesn't seem appearing on all device models but only some specific ones.
