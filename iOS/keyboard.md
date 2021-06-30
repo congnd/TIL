@@ -45,3 +45,22 @@ public enum Utils {
   }
 }
 ```
+
+## A simple way to dismiss the keyboard when tapping outside the view
+
+```Swift
+override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    if !self.point(inside: point, with: event) {
+        // Calling `removeFromSuperView` without deferring causes your keyboard dissapear without animation.
+        // If you don't need to remove `self` from its super view, 
+        // then you can let these 2 lines of code run sequentially (without the `async`
+        DispatchQueue.main.async {
+            // Hide the keyboard when tapping outside of the view
+            self.textField.resignFirstResponder()
+            self.removeFromSuperview()
+        }
+        return self
+    }
+    return super.hitTest(point, with: event)
+}
+```
