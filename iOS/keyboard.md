@@ -1,4 +1,4 @@
-## Keyboard Animation
+## Animate along side with the keyboard animation
 
 ~~In the pass, if you want to move your view alongside with keyboard show/hide animation, 
 you need to read other infomation included in the notification like duration and curve 
