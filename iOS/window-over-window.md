@@ -17,6 +17,7 @@ myWindow.isHidden = false // #3
 ```
 
 ~~***This may not work in UIScene-enabled application. You have to remove all scene configurations.***~~
+
 ***Update Jul 14 2021***
 Added `window.windowScene = someView.window?.windowScene` to make it work in scene enabled apps.
 
