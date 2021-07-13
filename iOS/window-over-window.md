@@ -12,10 +12,14 @@ let myWindow = UIWindow() // #1
 myWindow.rootViewController = UIViewController() // #2
 myWindow.frame = UIScreen.main.bounds // #2
 myWindow.windowLevel = UIWindow.Level.statusBar + 1
+window.windowScene = someView.window?.windowScene
 myWindow.isHidden = false // #3
 ```
 
-***This may not work in UIScene-enabled application. You have to remove all scene configurations.***
+~~***This may not work in UIScene-enabled application. You have to remove all scene configurations.***~~
+***Update Jul 14 2021***
+Added `window.windowScene = someView.window?.windowScene` to make it work in scene enabled apps.
+
 
 - ***#1***. Create an instance of the UIWindow. You can subclass UIWindow to do things you want. 
 Since UIWindow is just a subclass of the UIView, you can do whatever you want with that view.
