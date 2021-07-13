@@ -11,7 +11,7 @@ Here is a very simple example that show you how to make a new window and make it
 let myWindow = UIWindow() // #1
 myWindow.rootViewController = UIViewController() // #2
 myWindow.frame = UIScreen.main.bounds // #2
-myWindow.frame = UIWindow.Level.statusBar + 1
+myWindow.windowLevel = UIWindow.Level.statusBar + 1
 myWindow.isHidden = false // #3
 ```
 
