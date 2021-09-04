@@ -55,5 +55,8 @@ final class ContentView: UIView {
 }
 ```
 
-After checking the documentation of AVPlayerLayer, I know that I've missed something important so long. LOL
-Apple already have a code example on how to use AVPlayerLayer and interestingly, it's exactl the same with the solution above.
+After checking the documentation of AVPlayerLayer, I know that I've missed something important so long. LOL.
+
+Apple already have a code example on how to use AVPlayerLayer and interestingly, it's exactly the same with the solution above.
+
+https://developer.apple.com/documentation/avfoundation/avplayerlayer
