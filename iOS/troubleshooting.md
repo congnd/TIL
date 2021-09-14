@@ -65,3 +65,12 @@ xcrun simctl delete unavailable
 cd /Library/Developer/CoreSimulator/Profiles/Runtimes
 sudo rm -rf iOS\ 12.1.simruntime/
 ```
+
+### Can not find XXX when compiling project using `import Firebase`
+
+Detail is written in this issue https://github.com/firebase/firebase-ios-sdk/issues/6066.
+One of the possible solution here: https://github.com/firebase/firebase-ios-sdk/issues/6066#issuecomment-662580211
+
+But I also solved the issue by removing all the content of the `Pods/Firebase/CoreOnly/Firebase.h`, compile, undo the change and then compile again.
+
+I suspect this happens because of the caching and compiling order.
