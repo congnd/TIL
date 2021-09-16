@@ -1,10 +1,12 @@
 ### Embed pragma
 ```C
 #define STRINGIFY(a) #a
-#define DEFINE_DELETE_OBJECT(type)                      \
-    type delete_ ## type ## _(int handle);                  \
-    void delete_ ## type(int handle);                   \
-    _Pragma( STRINGIFY( weak delete_ ## type ## _ = delete_ ## type) )
+
+#define DEFINE_DELETE_OBJECT(type)                                  \
+    type delete_##type##_(int handle);                              \
+    void delete_##type(int handle);                                 \
+    _Pragma( STRINGIFY( weak delete_##type##_ = delete_##type) )
+
 DEFINE_DELETE_OBJECT(foo);
 ```
 
