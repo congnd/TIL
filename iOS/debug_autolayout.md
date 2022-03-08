@@ -26,6 +26,12 @@ expr -l Swift -- let $view = unsafeBitCast(0x7df67c50, to: UIView.self)
 expr -l Swift -- print($view.alpha)
 ```
 
+Or with Objc
+```
+po ((GAMBannerView *) 0x7fe394fb1930).responseInfo
+e ((GAMBannerView *) 0x7fe376030ea0).backgroundColor = [UIColor redColor]
+```
+
 ___Bonus:___ change background color in debug 
 ```
 (lldb) expr ((UIView *)0x7f9ea3d43410).backgroundColor = [UIColor redColor]
