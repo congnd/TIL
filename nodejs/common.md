@@ -58,3 +58,22 @@ To form a string from UTF16, use this
 String.fromCharCode(56, 160, 56)
 String.fromCharCode(160)
 ```
+
+## Read Japanese Text File (Shift_JIS encoded)
+
+```
+import iconv from 'iconv-lite';
+
+async function readFile(path) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path, function(err, data) {
+            if (err) {
+                reject(err);
+            }
+            var buf = new Buffer.from(data);
+            var text = iconv.decode(buf, "Shift_JIS");
+            resolve(text);
+        });
+    });
+}
+```
