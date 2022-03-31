@@ -63,6 +63,7 @@ String.fromCharCode(160)
 
 ```js
 import iconv from 'iconv-lite';
+import fs from "fs";
 
 async function readFile(path) {
     return new Promise((resolve, reject) => {
