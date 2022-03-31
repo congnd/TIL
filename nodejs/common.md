@@ -61,7 +61,7 @@ String.fromCharCode(160)
 
 ## Read Japanese Text File (Shift_JIS encoded)
 
-```
+```js
 import iconv from 'iconv-lite';
 
 async function readFile(path) {
