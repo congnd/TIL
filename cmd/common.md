@@ -1,3 +1,15 @@
+## Compress video using FFMPEG
+
+Install `ffmpeg`
+```
+brew install ffmpeg
+```
+
+Convert 
+```
+ffmpeg -i input.mp4 -c:v libx265 -vtag output.mp4
+```
+
 ## Find & Count lines
 ```shell
 find . \( -path ./Pods -o -path ./Carthage -o -path ./.git \) -prune -o -name "*.swift" -print0 | xargs -0 wc -l
