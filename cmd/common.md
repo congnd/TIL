@@ -7,7 +7,7 @@ brew install ffmpeg
 
 Convert 
 ```
-ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -filter:v fps=30 output.mp4
+ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -filter:v fps=30 -vf scale=1920:1080 output.mp4
 ```
 
 ## Find & Count lines
