@@ -1,5 +1,9 @@
 # Fastlane tips
 
+## `build_app`'s `skip_codesigning`
+When turning `ON`, entitlements will not be added into the archive, hence, this might create some trouble 
+if this archive is used to produce ipa bundles.
+
 ## `match` - Codesiging is easier than ever
 Refer: https://docs.fastlane.tools/actions/match/
 
